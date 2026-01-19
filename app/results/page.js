@@ -264,8 +264,8 @@ export default function ResultsPage() {
                       <th style={{ padding: '15px', textAlign: 'left', color: '#6b7280', fontWeight: '600', borderBottom: '2px solid #e5e7eb' }}>Reading</th>
                       <th style={{ padding: '15px', textAlign: 'left', color: '#6b7280', fontWeight: '600', borderBottom: '2px solid #e5e7eb' }}>Writing</th>
                       <th style={{ padding: '15px', textAlign: 'left', color: '#6b7280', fontWeight: '600', borderBottom: '2px solid #e5e7eb' }}>Speaking</th>
-                      <th style={{ padding: '15px', textAlign: 'left', color: '#6b7280', fontWeight: '600', borderBottom: '2px solid '#e5e7eb' }}>Overall</th>
-                      <th style={{ padding: '15px', textAlign: 'left', color: '#6b7280', fontWeight: '600', borderBottom: '2px solid '#e5e7eb' }}>Actions</th>
+                      <th style={{ padding: '15px', textAlign: 'left', color: '#6b7280', fontWeight: '600', borderBottom: '2px solid #e5e7eb' }}>Overall</th>
+                      <th style={{ padding: '15px', textAlign: 'left', color: '#6b7280', fontWeight: '600', borderBottom: '2px solid #e5e7eb' }}>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
