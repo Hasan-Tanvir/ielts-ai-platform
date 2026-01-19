@@ -130,7 +130,6 @@ export default function ExamPage() {
           writing_score: 6.0,
           speaking_score: 6.5,
           overall_band: 6.5,
-          updated_at: new Date().toISOString()
         })
         .eq('id', examId)
 
