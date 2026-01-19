@@ -9,9 +9,9 @@ export default function AITestPage() {
 
   const testGemini3Flash = async () => {
     try {
-      // FIX: Changed 'gemini-3-flash-preview' to 'gemini-3-flash-preview-preview'
+      // FIX: Changed 'gemini-3-flash-preview' to 'gemini-1.5-flash-latest'
       const response = await fetch(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview-preview:generateContent?key=' + 
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=' + 
         process.env.NEXT_PUBLIC_GEMINI_API_KEY,
         {
           method: 'POST',
@@ -23,8 +23,6 @@ export default function AITestPage() {
             generationConfig: {
               temperature: 0.7,
               maxOutputTokens: 100,
-              // NEW in Gemini 3: Set thinking level for specific tasks
-              thinkingLevel: 'minimal' 
             }
           })
         }
@@ -45,7 +43,7 @@ export default function AITestPage() {
       const prompt = `Evaluate this IELTS essay on scale 1-9 (9 is best). Reply with ONLY the number: "${essay}"`
 
       const response = await fetch(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview-preview:generateContent?key=' + 
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=' + 
         process.env.NEXT_PUBLIC_GEMINI_API_KEY,
         {
           method: 'POST',
@@ -55,8 +53,6 @@ export default function AITestPage() {
             generationConfig: {
               temperature: 0.3,
               maxOutputTokens: 10,
-              // For evaluation, 'medium' or 'high' thinking provides better accuracy
-              thinkingLevel: 'medium' 
             }
           })
         }
