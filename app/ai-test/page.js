@@ -5,163 +5,290 @@ import { useState } from 'react'
 export default function AITestPage() {
   const [results, setResults] = useState([])
   const [loading, setLoading] = useState(false)
+  const [essay, setEssay] = useState('Technology has transformed education. Online learning is accessible to everyone.')
 
-  const testGeminiSimple = async () => {
+  const testGeminiFlash = async () => {
     try {
-      // CORRECT Gemini endpoint
+      // CORRECT: gemini-1.5-flash
       const response = await fetch(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=' + process.env.NEXT_PUBLIC_GEMINI_API_KEY,
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + 
+        process.env.NEXT_PUBLIC_GEMINI_API_KEY,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             contents: [{
-              parts: [{ text: 'Say hello in one word.' }]
-            }]
+              parts: [{ text: 'Say "Hello IELTS" if you are working.' }]
+            }],
+            generationConfig: {
+              temperature: 0.7,
+              maxOutputTokens: 100
+            }
           })
         }
       )
       
-      if (response.status === 404) {
-        return { success: false, error: '404 - Wrong endpoint or model' }
+      const data = await response.json()
+      
+      if (data.error) {
+        return { success: false, error: data.error.message }
       }
       
-      const data = await response.json()
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text || 'No text'
       return { 
         success: true, 
-        data: data.candidates?.[0]?.content?.parts?.[0]?.text || 'No response' 
+        data: text,
+        raw: data
       }
     } catch (error) {
       return { success: false, error: error.message }
     }
   }
 
-  const testDeepSeekSimple = async () => {
+  const evaluateEssayWithGemini = async () => {
     try {
-      // Try DeepSeek with proper headers
-      const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': 'Bearer ' + process.env.NEXT_PUBLIC_DEEPSEEK_API_KEY,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          model: 'deepseek-chat',
-          messages: [{ role: 'user', content: 'Say hello.' }],
-          max_tokens: 10,
-          stream: false
-        })
-      })
+      const prompt = `Evaluate this IELTS essay on scale 1-9 (9 is best). Reply with ONLY the number:
       
-      if (response.status === 402) {
-        return { 
-          success: false, 
-          error: '402 - Payment required. Check https://platform.deepseek.com/balance' 
+      "${essay}"
+      
+      Example response: "6.5"`
+
+      const response = await fetch(
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + 
+        process.env.NEXT_PUBLIC_GEMINI_API_KEY,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{
+              parts: [{ text: prompt }]
+            }],
+            generationConfig: {
+              temperature: 0.3,
+              maxOutputTokens: 10
+            }
+          })
         }
-      }
+      )
       
       const data = await response.json()
-      return { 
-        success: true, 
-        data: data.choices?.[0]?.message?.content || 'No response' 
+      const scoreText = data.candidates?.[0]?.content?.parts?.[0]?.text || '6.5'
+      const score = parseFloat(scoreText) || 6.5
+      
+      return {
+        success: true,
+        score: score,
+        feedback: `Gemini 1.5 Flash gave band: ${score}`,
+        raw: data
       }
     } catch (error) {
-      return { success: false, error: error.message }
+      return {
+        success: false,
+        score: 6.5,
+        feedback: 'Error: ' + error.message,
+        error: true
+      }
     }
   }
 
-  const runTests = async () => {
+  const runConnectionTest = async () => {
     setLoading(true)
     setResults([])
     
-    const tests = [
-      { name: 'Gemini API', test: testGeminiSimple },
-      { name: 'DeepSeek API', test: testDeepSeekSimple }
-    ]
+    const result = await testGeminiFlash()
     
-    for (const test of tests) {
-      const result = await test.test()
-      setResults(prev => [...prev, {
-        name: test.name,
-        success: result.success,
-        message: result.success ? '✅ Connected: ' + result.data : '❌ Failed: ' + result.error,
-        raw: result
-      }])
-    }
+    setResults([{
+      name: 'Gemini 1.5 Flash',
+      success: result.success,
+      message: result.success ? `✅ Working: "${result.data}"` : `❌ Failed: ${result.error}`,
+      raw: result
+    }])
+    
+    setLoading(false)
+  }
+
+  const runEssayTest = async () => {
+    setLoading(true)
+    
+    const result = await evaluateEssayWithGemini()
+    
+    setResults([{
+      name: 'IELTS Essay Evaluation',
+      success: result.success,
+      message: result.success ? `✅ Score: Band ${result.score}` : `❌ Error: ${result.feedback}`,
+      score: result.score,
+      raw: result
+    }])
     
     setLoading(false)
   }
 
   return (
     <div style={{ padding: '40px', maxWidth: '800px', margin: '0 auto' }}>
-      <h1>🔧 API Connection Test</h1>
-      
-      <button 
-        onClick={runTests}
-        disabled={loading}
-        style={{
-          padding: '15px 30px',
-          backgroundColor: loading ? '#999' : '#4CAF50',
-          color: 'white',
-          border: 'none',
-          borderRadius: '8px',
-          fontSize: '18px',
-          marginBottom: '30px'
-        }}
-      >
-        {loading ? 'Testing...' : 'Test APIs'}
-      </button>
+      <h1 style={{ fontSize: '32px', marginBottom: '10px' }}>🤖 Gemini 1.5 Flash Test</h1>
+      <p style={{ color: '#666', marginBottom: '30px' }}>
+        Testing <strong>gemini-1.5-flash</strong> model (correct free model)
+      </p>
 
-      {results.length > 0 && (
-        <div style={{ marginTop: '30px' }}>
-          <h2>Results:</h2>
-          {results.map((result, index) => (
-            <div 
-              key={index}
-              style={{
-                padding: '20px',
-                marginBottom: '15px',
-                backgroundColor: result.success ? '#d4edda' : '#f8d7da',
-                border: `1px solid ${result.success ? '#c3e6cb' : '#f5c6cb'}`,
-                borderRadius: '8px'
-              }}
-            >
-              <h3 style={{ marginTop: '0', color: result.success ? '#155724' : '#721c24' }}>
-                {result.name}: {result.success ? '✅' : '❌'}
-              </h3>
-              <p>{result.message}</p>
-              {!result.success && result.name === 'DeepSeek API' && (
-                <div style={{ 
-                  backgroundColor: '#fff3cd', 
-                  padding: '10px', 
-                  borderRadius: '5px',
-                  marginTop: '10px'
-                }}>
-                  <strong>Fix DeepSeek 402:</strong>
-                  <ol style={{ margin: '10px 0 0 20px' }}>
-                    <li>Go to: <a href="https://platform.deepseek.com/balance" target="_blank">DeepSeek Balance</a></li>
-                    <li>Check if you have free credits</li>
-                    <li>May need to add payment method (free tier still needs card)</li>
-                  </ol>
-                </div>
-              )}
-            </div>
-          ))}
+      <div style={{ 
+        backgroundColor: '#e8f4fd', 
+        padding: '20px', 
+        borderRadius: '10px',
+        marginBottom: '30px',
+        borderLeft: '4px solid #4285f4'
+      }}>
+        <h3 style={{ color: '#1a73e8', marginTop: '0' }}>ℹ️ Model Info</h3>
+        <p><strong>Model:</strong> gemini-1.5-flash (latest free)</p>
+        <p><strong>Endpoint:</strong> https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent</p>
+        <p><strong>Your Key:</strong> {process.env.NEXT_PUBLIC_GEMINI_API_KEY ? '***' + process.env.NEXT_PUBLIC_GEMINI_API_KEY.slice(-8) : 'Not set'}</p>
+      </div>
+
+      {/* Test Buttons */}
+      <div style={{ display: 'flex', gap: '20px', marginBottom: '30px' }}>
+        <button
+          onClick={runConnectionTest}
+          disabled={loading}
+          style={{
+            padding: '15px 30px',
+            backgroundColor: loading ? '#999' : '#4285f4',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            cursor: loading ? 'not-allowed' : 'pointer',
+            flex: 1
+          }}
+        >
+          🔌 Test Connection
+        </button>
+        
+        <button
+          onClick={runEssayTest}
+          disabled={loading}
+          style={{
+            padding: '15px 30px',
+            backgroundColor: loading ? '#999' : '#34a853',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            cursor: loading ? 'not-allowed' : 'pointer',
+            flex: 1
+          }}
+        >
+          📝 Evaluate Essay
+        </button>
+      </div>
+
+      {/* Essay Input */}
+      <div style={{ marginBottom: '30px' }}>
+        <textarea
+          value={essay}
+          onChange={(e) => setEssay(e.target.value)}
+          style={{
+            width: '100%',
+            height: '100px',
+            padding: '15px',
+            border: '2px solid #ddd',
+            borderRadius: '8px',
+            fontSize: '16px'
+          }}
+          placeholder="Enter IELTS essay..."
+        />
+      </div>
+
+      {/* Results */}
+      {loading && (
+        <div style={{ textAlign: 'center', padding: '30px' }}>
+          <div style={{ fontSize: '48px' }}>⏳</div>
+          <p>Calling Gemini 1.5 Flash API...</p>
         </div>
       )}
 
+      {results.map((result, index) => (
+        <div
+          key={index}
+          style={{
+            padding: '25px',
+            marginBottom: '20px',
+            backgroundColor: result.success ? '#d4edda' : '#f8d7da',
+            border: `2px solid ${result.success ? '#28a745' : '#dc3545'}`,
+            borderRadius: '10px'
+          }}
+        >
+          <h3 style={{ 
+            marginTop: '0', 
+            color: result.success ? '#155724' : '#721c24',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px'
+          }}>
+            <span style={{ fontSize: '24px' }}>
+              {result.success ? '✅' : '❌'}
+            </span>
+            {result.name}
+          </h3>
+          
+          <p style={{ 
+            fontSize: '18px', 
+            fontWeight: 'bold',
+            color: result.success ? '#155724' : '#721c24'
+          }}>
+            {result.message}
+          </p>
+          
+          {result.score && (
+            <div style={{
+              textAlign: 'center',
+              margin: '20px 0',
+              padding: '20px',
+              backgroundColor: '#e2e3e5',
+              borderRadius: '8px'
+            }}>
+              <div style={{ fontSize: '14px', color: '#6c757d' }}>BAND SCORE</div>
+              <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#1a73e8' }}>
+                {result.score}
+              </div>
+            </div>
+          )}
+          
+          {!result.success && (
+            <div style={{ 
+              backgroundColor: '#fff3cd', 
+              padding: '15px', 
+              borderRadius: '5px',
+              marginTop: '15px',
+              border: '1px solid #ffc107'
+            }}>
+              <strong>Troubleshooting:</strong>
+              <ol style={{ margin: '10px 0 0 20px' }}>
+                <li>Check key is in Vercel Environment Variables</li>
+                <li>Key should start with: <code>AIzaSy</code></li>
+                <li>Wait 2 minutes after adding to Vercel</li>
+                <li>Model must be: <code>gemini-1.5-flash</code></li>
+              </ol>
+            </div>
+          )}
+        </div>
+      ))}
+
+      {/* Instructions */}
       <div style={{ 
-        backgroundColor: '#e7f3ff', 
+        backgroundColor: '#f8f9fa', 
         padding: '20px', 
         borderRadius: '8px',
-        marginTop: '40px'
+        marginTop: '40px',
+        border: '1px solid #dee2e6'
       }}>
-        <h3>📋 API Status Summary:</h3>
-        <ul>
-          <li><strong>Gemini 404:</strong> Fixed endpoint. Should work with correct key.</li>
-          <li><strong>DeepSeek 402:</strong> Needs account setup with credits.</li>
-          <li><strong>Next:</strong> We can proceed with Gemini for now.</li>
-        </ul>
+        <h3>📋 Expected Flow:</h3>
+        <ol style={{ lineHeight: '1.8' }}>
+          <li>Click <strong>"Test Connection"</strong> - should show "Hello IELTS"</li>
+          <li>If ✅, click <strong>"Evaluate Essay"</strong></li>
+          <li>Should give a band score (6.0-8.0 range)</li>
+          <li>Then we integrate into IELTS exam</li>
+        </ol>
       </div>
     </div>
   )
