@@ -54,6 +54,7 @@ export default function DashboardPage() {
           <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
             <Link href="/test" style={{ padding: '12px 24px', backgroundColor: '#3b82f6', color: 'white', borderRadius: '8px', textDecoration: 'none' }}>Test DB Connection</Link>
             <button onClick={() => alert('Coming soon!')} style={{ padding: '12px 24px', backgroundColor: '#10b981', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer' }}>Start Practice Test</button>
+            <Link href="/exam" style={{ padding: "12px 24px", backgroundColor: "#3b82f6", color: "white", borderRadius: "8px", textDecoration: "none", margin: "0 10px" }}>Start IELTS Exam</Link>
           </div>
         </div>
       </main>
