@@ -19,7 +19,7 @@ export default function TestPage() {
       const { data, error } = await supabase
         .from('questions')
         .select('*')
-        .limit(3)
+        .limit(20)
       
       if (error) {
         setResult('❌ ERROR: ' + error.message)
