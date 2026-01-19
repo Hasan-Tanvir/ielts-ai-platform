@@ -80,951 +80,36 @@ export default function ExamPage() {
 
   // Save answers to database
   const saveAnswers = async () => {
-  // Complete entire exam
-  const completeExam = async () => {
     if (!userId || !examId) {
       alert('Please login first')
       return
     }
 
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
-    if (!userId || !examId) {
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
-      alert('Please login first')
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
-      return
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
-    }
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
-
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
     setSaving(true)
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
     let savedCount = 0
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
 
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
-
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
     for (const question of questions) {
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
       const answer = answers[question.id]
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
       if (answer && answer.trim() !== '') {
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
         const { error } = await supabase
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
           .from('user_responses')
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
           .insert({
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
             user_id: userId,
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
             exam_id: examId,
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
             question_id: question.id,
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
             user_answer: answer,
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
             module: currentModule,
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
             answered_at: new Date().toISOString()
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
           })
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
 
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
-
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
         if (!error) savedCount++
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
       }
     }
-  }
-      }
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
 
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
-    }
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
-
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
     setSaving(false)
+    alert(`✅ Saved ${savedCount} answers to database!`)
+  }
+
   // Complete entire exam
   const completeExam = async () => {
     if (!userId || !examId) {
@@ -1032,7 +117,7 @@ export default function ExamPage() {
       return
     }
 
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
+    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score and show results.')) {
       setSaving(true)
       
       // Update exam as completed
@@ -1040,77 +125,7 @@ export default function ExamPage() {
         .from('exams')
         .update({
           completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
-    alert(`✅ Saved ${savedCount} answers to database!\n\nCheck Supabase → Table Editor → user_responses`)
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
-          reading_score: 7.0,
-          writing_score: 6.0,
-          speaking_score: 6.5,
-          overall_band: 6.5,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', examId)
-
-      setSaving(false)
-      
-      if (error) {
-        alert('Error completing exam: ' + error.message)
-      } else {
-        alert('✅ Exam completed! Redirecting to results...')
-        router.push('/results')
-      }
-    }
-  }
-  }
-  // Complete entire exam
-  const completeExam = async () => {
-    if (!userId || !examId) {
-      alert('Please login first')
-      return
-    }
-
-    if (window.confirm('Finish entire IELTS exam? This will calculate your final band score.')) {
-      setSaving(true)
-      
-      // Update exam as completed
-      const { error } = await supabase
-        .from('exams')
-        .update({
-          completed: true,
-          listening_score: 6.5, // Mock scores for now
+          listening_score: 6.5,
           reading_score: 7.0,
           writing_score: 6.0,
           speaking_score: 6.5,
@@ -1168,129 +183,14 @@ export default function ExamPage() {
           <h1 style={{ fontSize: '24px', fontWeight: 'bold', color: '#1a202c' }}>
             🎯 IELTS Mock Test
           </h1>
-          <p style={{ color: '#4a5568' }}>Exam ID: {examId ? examId.slice(0, 8) + '...' : 'Loading...'}</p>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
+          <p style={{ color: '#4a5568' }}>Complete all sections and get your band score</p>
         </div>
         <div style={{ textAlign: 'center' }}>
           <div style={{ fontSize: '32px', fontWeight: 'bold', color: timeLeft < 600 ? '#e53e3e' : '#2d3748' }}>
             {formatTime(timeLeft)}
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
           </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
           <div style={{ color: '#718096', fontSize: '14px' }}>Time Remaining</div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
         </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
       </div>
 
       {/* Module Tabs */}
@@ -1320,29 +220,6 @@ export default function ExamPage() {
             {module}
           </button>
         ))}
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
       </div>
 
       {/* Exam Content */}
@@ -1365,29 +242,6 @@ export default function ExamPage() {
         {loading ? (
           <div style={{ textAlign: 'center', padding: '60px' }}>
             <p>Loading questions...</p>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
           </div>
         ) : (
           <div>
@@ -1399,255 +253,34 @@ export default function ExamPage() {
                     border: '1px solid #e2e8f0',
                     borderRadius: '8px',
                     padding: '25px',
-                    backgroundColor: answers[q.id] ? '#f0fff4' : '#f8fafc',
-                    borderLeft: answers[q.id] ? '4px solid #10b981' : '4px solid #e2e8f0'
+                    backgroundColor: answers[q.id] ? '#f0fff4' : '#f8fafc'
                   }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px' }}>
-                      <div style={{ 
-                        backgroundColor: '#4299e1',
-                        color: 'white',
-                        padding: '4px 12px',
-                        borderRadius: '20px',
-                        fontSize: '14px',
-                        fontWeight: 'bold'
-                      }}>
-                        Question {index + 1}
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-                      </div>
-                      <div style={{ color: '#718096' }}>
-                        {answers[q.id] ? '✓ Answered' : 'Not answered'}
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-                      </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-                    </div>
-                    
                     <p style={{ fontSize: '18px', color: '#2d3748', marginBottom: '20px' }}>
-                      {q.question_text}
+                      <strong>Q{index + 1}:</strong> {q.question_text}
                     </p>
 
                     {/* Answer Input */}
                     <div>
-                      <label style={{ display: 'block', marginBottom: '8px', color: '#4a5568' }}>
-                        Your Answer:
-                      </label>
-                      {q.question_type.includes('multiple') ? (
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                          {['A', 'B', 'C', 'D'].map(option => (
-                            <label key={option} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                              <input 
-                                type="radio" 
-                                name={`q${q.id}`} 
-                                value={option}
-                                checked={answers[q.id] === option}
-                                onChange={(e) => handleAnswerChange(q.id, e.target.value)}
-                              />
-                              <span>Option {option}</span>
-                            </label>
-                          ))}
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-                        </div>
-                      ) : (
-                        <textarea 
-                          value={answers[q.id] || ''}
-                          onChange={(e) => handleAnswerChange(q.id, e.target.value)}
-                          style={{
-                            width: '100%',
-                            padding: '15px',
-                            border: '1px solid #cbd5e0',
-                            borderRadius: '8px',
-                            minHeight: '100px',
-                            fontSize: '16px'
-                          }}
-                          placeholder="Type your answer here..."
-                        />
-                      )}
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
+                      <textarea 
+                        value={answers[q.id] || ''}
+                        onChange={(e) => handleAnswerChange(q.id, e.target.value)}
+                        style={{
+                          width: '100%',
+                          padding: '15px',
+                          border: '1px solid #cbd5e0',
+                          borderRadius: '8px',
+                          minHeight: '80px',
+                          fontSize: '16px'
+                        }}
+                        placeholder="Type your answer here..."
+                      />
                     </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
                   </div>
                 ))}
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
               </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
             </div>
 
-            {/* Submit Button */}
+            {/* Save Answers Button */}
             <div style={{ textAlign: 'center', marginTop: '40px' }}>
               <button
                 onClick={saveAnswers}
@@ -1660,468 +293,89 @@ export default function ExamPage() {
                   borderRadius: '8px',
                   fontSize: '18px',
                   fontWeight: '600',
-                  cursor: saving ? 'not-allowed' : 'pointer'
+                  cursor: saving ? 'not-allowed' : 'pointer',
+                  marginRight: '20px'
                 }}
               >
-                {saving ? 'Saving to Database...' : `Save ${currentModule} Answers`}
+                {saving ? 'Saving...' : `Save ${currentModule} Answers`}
               </button>
-              <p style={{ color: '#6b7280', marginTop: '10px', fontSize: '14px' }}>
-                Answers saved to: user_responses table in Supabase
-              </p>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
             </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
           </div>
         )}
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
       </div>
 
-      {/* Database Status */}
+      {/* COMPLETE EXAM BUTTON - NEW */}
       <div style={{
-        backgroundColor: '#e0f2fe',
+        backgroundColor: 'white',
         borderRadius: '10px',
-        padding: '20px',
+        padding: '40px',
         marginTop: '30px',
-        borderLeft: '4px solid #0ea5e9'
+        boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
+        textAlign: 'center',
+        border: '2px solid #8b5cf6'
       }}>
-        <h3 style={{ color: '#0369a1', marginTop: '0' }}>💾 Database Status:</h3>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
-          <div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
+        <h3 style={{ color: '#5b21b6', fontSize: '24px', marginBottom: '15px' }}>
+          🎯 Finished All Sections?
+        </h3>
+        <p style={{ color: '#6b7280', marginBottom: '25px', maxWidth: '600px', margin: '0 auto' }}>
+          Completed Listening, Reading, Writing, and Speaking? Get your final IELTS band score.
+        </p>
         <button
           onClick={completeExam}
           disabled={saving}
           style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
+            padding: '18px 50px',
+            backgroundColor: saving ? '#9ca3af' : '#8b5cf6',
+            color: 'white',
+            border: 'none',
+            borderRadius: '10px',
+            fontSize: '20px',
+            fontWeight: 'bold',
+            cursor: saving ? 'not-allowed' : 'pointer',
+            boxShadow: '0 4px 14px rgba(139, 92, 246, 0.3)'
           }}
         >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
+          {saving ? 'Processing...' : '✅ Complete IELTS Exam & Get Score'}
         </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
+        <p style={{ color: '#9ca3af', marginTop: '15px', fontSize: '14px' }}>
+          This will calculate your band score and redirect to results page
         </p>
       </div>
-            <div style={{ color: '#4b5563' }}>User ID:</div>
-            <div style={{ fontWeight: '500', color: '#1f2937' }}>
-              {userId ? userId.slice(0, 10) + '...' : 'Not logged in'}
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-            </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
+
+      {/* Progress Status */}
+      <div style={{
+        backgroundColor: '#f0f9ff',
+        borderRadius: '10px',
+        padding: '25px',
+        marginTop: '30px',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: '20px'
+      }}>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: '14px', color: '#0369a1' }}>Exam ID</div>
+          <div style={{ fontWeight: '500', color: '#1e40af' }}>
+            {examId ? examId.slice(0, 8) + '...' : 'Creating...'}
           </div>
-          <div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-            <div style={{ color: '#4b5563' }}>Exam ID:</div>
-            <div style={{ fontWeight: '500', color: '#1f2937' }}>
-              {examId ? examId.slice(0, 10) + '...' : 'Creating...'}
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-            </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-          </div>
-          <div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-            <div style={{ color: '#4b5563' }}>Questions:</div>
-            <div style={{ fontWeight: '500', color: '#1f2937' }}>
-              {questions.length} loaded
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-            </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-          </div>
-          <div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-            <div style={{ color: '#4b5563' }}>Answered:</div>
-            <div style={{ fontWeight: '500', color: '#1f2937' }}>
-              {Object.values(answers).filter(a => a && a.trim() !== '').length} / {questions.length}
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-            </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-          </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
         </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
-      </div>
-      </div>
-      {/* Complete Exam Button */}
-      <div style={{ textAlign: "center", marginTop: "30px", paddingTop: "30px", borderTop: "1px solid #e5e7eb" }}>
-        <h3 style={{ color: "#4b5563", marginBottom: "15px" }}>🎯 Finished All Sections?</h3>
-        <button
-          onClick={completeExam}
-          disabled={saving}
-          style={{
-            padding: "15px 40px",
-            backgroundColor: saving ? "#9ca3af" : "#8b5cf6",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-            cursor: saving ? "not-allowed" : "pointer"
-          }}
-        >
-          {saving ? "Processing..." : "Complete IELTS Exam & Get Score"}
-        </button>
-        <p style={{ color: "#6b7280", marginTop: "10px", fontSize: "14px" }}>
-          This will calculate your final band score and show results
-        </p>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: '14px', color: '#0369a1' }}>Questions Answered</div>
+          <div style={{ fontWeight: '500', color: '#1e40af' }}>
+            {Object.values(answers).filter(a => a && a.trim() !== '').length} total
+          </div>
+        </div>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: '14px', color: '#0369a1' }}>Current Module</div>
+          <div style={{ fontWeight: '500', color: '#1e40af', textTransform: 'capitalize' }}>
+            {currentModule}
+          </div>
+        </div>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: '14px', color: '#0369a1' }}>Next Step</div>
+          <div style={{ fontWeight: '500', color: '#1e40af' }}>
+            {currentModule === 'speaking' ? 'Complete Exam' : 'Next Module'}
+          </div>
+        </div>
       </div>
     </div>
   )
