@@ -22,8 +22,7 @@ export default function AITestPage() {
             }],
             generationConfig: {
               temperature: 0.7,
-              maxOutputTokens: 100,
-              thinkingLevel: 'minimal'
+              maxOutputTokens: 100
             }
           })
         }
@@ -53,8 +52,7 @@ export default function AITestPage() {
             contents: [{ parts: [{ text: prompt }] }],
             generationConfig: {
               temperature: 0.3,
-              maxOutputTokens: 10,
-              thinkingLevel: 'medium'
+              maxOutputTokens: 10
             }
           })
         }
@@ -185,7 +183,6 @@ export default function AITestPage() {
         <ul>
           <li><strong>Model:</strong> gemini-3-flash-preview</li>
           <li><strong>Endpoint:</strong> generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent</li>
-          <li><strong>Required Thinking Levels:</strong> minimal, medium (for gemini-3)</li>
           <li><strong>Environment Variable:</strong> NEXT_PUBLIC_GEMINI_API_KEY</li>
         </ul>
       </div>
