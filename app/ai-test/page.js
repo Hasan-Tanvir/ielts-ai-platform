@@ -9,9 +9,9 @@ export default function AITestPage() {
 
   const testGemini3Flash = async () => {
     try {
-      // FIX: Changed 'gemini-3-flash-preview' to 'gemini-1.5-flash-latest'
+      // FIX: Changed 'gemini-3-flash-preview
       const response = await fetch(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=' + 
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview
         process.env.NEXT_PUBLIC_GEMINI_API_KEY,
         {
           method: 'POST',
@@ -43,7 +43,7 @@ export default function AITestPage() {
       const prompt = `Evaluate this IELTS essay on scale 1-9 (9 is best). Reply with ONLY the number: "${essay}"`
 
       const response = await fetch(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=' + 
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview
         process.env.NEXT_PUBLIC_GEMINI_API_KEY,
         {
           method: 'POST',
